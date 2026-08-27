@@ -1,0 +1,23 @@
+definition_version: 2
+entities:
+  streamlit_app:
+    type: streamlit
+    identifier:
+      database: SUPPORT_DB
+      schema: SECURITY
+      name: ST_PAT_MANAGEMENT_PORTAL
+    title: PAT_MANAGEMENT_PORTAL
+    query_warehouse: SUPPORT_WH
+    compute_pool: SYSTEM_COMPUTE_POOL_CPU
+    run_mode: SpcsOnly
+    execute_as: OWNER
+    main_file: st_pat_management_portal.py
+    artifacts:
+      - pyproject.toml
+      - st_pat_management_portal.py
+      - .streamlit/config.toml
+    sharing:
+      - role: PAT_PROVISIONER_RL
+        with_grant_option: false
+      - role: PAT_USER_RL
+        with_grant_option: false
